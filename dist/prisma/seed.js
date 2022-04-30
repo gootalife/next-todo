@@ -40,27 +40,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var prisma_1 = __importDefault(require("../utils/prisma"));
-var date_fns_1 = require("date-fns");
+var date_1 = require("../utils/date");
 var main = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var dateFormat;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                dateFormat = 'yyyyMMddHHmmss';
-                return [4 /*yield*/, prisma_1.default.task.create({
-                        data: {
-                            createdAt: (0, date_fns_1.format)(new Date(), dateFormat),
-                            updatedAt: (0, date_fns_1.format)(new Date(), dateFormat),
-                            title: 'test1',
-                            content: 'content1'
-                        }
-                    })];
+            case 0: return [4 /*yield*/, prisma_1.default.task.create({
+                    data: {
+                        createdAt: (0, date_1.getDateNow)(),
+                        updatedAt: (0, date_1.getDateNow)(),
+                        title: 'test1',
+                        content: 'content1'
+                    }
+                })];
             case 1:
                 _a.sent();
                 return [4 /*yield*/, prisma_1.default.task.create({
                         data: {
-                            createdAt: (0, date_fns_1.format)(new Date(), dateFormat),
-                            updatedAt: (0, date_fns_1.format)(new Date(), dateFormat),
+                            createdAt: (0, date_1.getDateNow)(),
+                            updatedAt: (0, date_1.getDateNow)(),
                             title: 'test2',
                             content: 'content2'
                         }

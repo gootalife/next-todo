@@ -1,20 +1,19 @@
 import prisma from '../utils/prisma'
-import { format } from 'date-fns'
+import { getDateNow } from '../utils/date'
 
 const main = async () => {
-  const dateFormat = 'yyyyMMddHHmmss'
   await prisma.task.create({
     data: {
-      createdAt: format(new Date(), dateFormat),
-      updatedAt: format(new Date(), dateFormat),
+      createdAt: getDateNow(),
+      updatedAt: getDateNow(),
       title: 'test1',
       content: 'content1'
     }
   })
   await prisma.task.create({
     data: {
-      createdAt: format(new Date(), dateFormat),
-      updatedAt: format(new Date(), dateFormat),
+      createdAt: getDateNow(),
+      updatedAt: getDateNow(),
       title: 'test2',
       content: 'content2'
     }
