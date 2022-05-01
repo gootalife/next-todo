@@ -25,7 +25,7 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
             content: body.content ?? ''
           }
         })
-        res.status(200)
+        res.status(200).json({})
         break
       case 'PUT':
         await prisma.task.update({
@@ -38,7 +38,7 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
             content: body.content
           }
         })
-        res.status(200)
+        res.status(200).json({})
         break
       case 'DELETE':
         await prisma.task.delete({
@@ -46,7 +46,7 @@ const handler = async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
             uuid: body.uuid
           }
         })
-        res.status(200)
+        res.status(200).json({})
         break
     }
   } catch (error) {
